@@ -12,7 +12,7 @@
   "homepage": "https://github.com/cfpb/cf-forms",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cfarm/cf-forms.git#text-input-fields"
+    "url": "https://github.com/cfarm/cf-forms.git#forms"
   },
   "license": "https://github.com/cfarm/cf-forms/blob/gh-pages/TERMS.md",
   "main": "src/cf-forms.less",
