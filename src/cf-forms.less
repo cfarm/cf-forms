@@ -2,6 +2,7 @@
 @import (less) '../../cf-core/src/cf-core.less';
 @import (less) '../../cf-buttons/src/cf-buttons.less';
 @import (less) '../../cf-icons/src/cf-icons.less';
+@import (less) '../../cf-typography/src/cf-typography.less';
 
 /* ==========================================================================
    Capital Framework
@@ -37,6 +38,9 @@
 // .disabled
 @input-disabled:                #f1f2f2;
 
+// .form-label-helper-text
+@label-helper:                  #ffb108;
+
 // Sizing variables
 
 // .input__super
@@ -52,12 +56,23 @@
         <label class="form-label-header">
             Form label header
         </label>
+    - name: Form label helper text
+      markup: |
+        <label class="form-label-helper-text">
+            Form label helper text
+        </label>
   tags:
     - cf-forms
 */
 
 .form-label-header {
     .h4();
+    margin-bottom: unit(10px / @font-size, em);
+}
+
+.form-label-helper-text {
+    .micro-copy();
+    color: @label-helper;
     margin-bottom: unit(10px / @font-size, em);
 }
 
