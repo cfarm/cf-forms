@@ -33,11 +33,14 @@
 // Color variables
 
 // .error
+@input-error:                   #eca87a;
+@input-error-bg:                lighten(@input-error, 45%);
 
 @input-error:                   #eca87a;
 
 // .success
 @input-success:                 #905c8a;
+@input-success-bg:              lighten(@input-success, 45%);
 
 // .disabled
 @input-disabled:                #cdb5cd;
@@ -461,12 +464,12 @@ textarea {
 
 .alert__error {
     border: 1px solid @input-error;
-    background-color: lighten(@input-error, 45%);
+    background-color: @input-error-bg;
 }
 
 .alert__success {
     border: 1px solid @input-success;
-    background-color: lighten(@input-success, 45%);
+    background-color: @input-success-bg;
 }
 
 
