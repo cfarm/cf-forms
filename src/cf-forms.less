@@ -202,6 +202,14 @@ textarea {
     color: @input-error;
 }
 
+.alert__error .@{cf-forms_input-icon-class} {
+    color: @input-error;
+}
+
+.alert__success .@{cf-forms_input-icon-class} {
+    color: @input-success;
+}
+
 /* topdoc
   name: Form group
   family: cf-forms
@@ -432,6 +440,42 @@ textarea {
     }
 
 }
+
+/* topdoc
+  name: Form-level validation message
+  family: cf-forms
+  patterns:
+    - name: Form-level error alert
+      markup: |
+        <div class="alert__error">
+          <p><span class="cf-form_input-icon cf-icon cf-icon-delete-round" role="alert"></span>
+          The following form fields are incomplete or have errors:</p>
+          <ul class="list list__unstyled">
+            <li>What do you think would be a fair resolution to your issue?</li>
+            <li>Which of these best describes your issue?</li>
+            <li>Describe what happened so we can understand the issue...</li>
+          </ul>
+        </div>
+    - name: Form-level success alert
+      markup: |
+        <div class="alert__success">
+            <p><span class="cf-form_input-icon cf-icon cf-icon-delete-round" role="alert"></span>
+            15 results found</p>
+        </div>
+  tags:
+    - cf-forms
+*/
+
+.alert__error {
+    border: 1px solid @input-error;
+    background-color: lighten(@input-error, 50%);
+}
+
+.alert__success {
+    border: 1px solid @input-success;
+    background-color: lighten(@input-success, 50%);
+}
+
 
 
 /* topdoc
