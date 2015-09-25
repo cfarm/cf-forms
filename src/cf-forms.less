@@ -450,7 +450,7 @@ textarea {
   patterns:
     - name: Form-level error alert
       markup: |
-        <div class="alert__error">
+        <div class="alert alert__error">
           <p><span class="cf-form_input-icon cf-icon cf-icon-delete-round" role="alert"></span>
           The following form fields are incomplete or have errors:</p>
           <ul class="list list__unstyled">
@@ -461,13 +461,17 @@ textarea {
         </div>
     - name: Form-level success alert
       markup: |
-        <div class="alert__success">
+        <div class="alert alert__success">
             <p><span class="cf-form_input-icon cf-icon cf-icon-delete-round" role="alert"></span>
             15 results found</p>
         </div>
   tags:
     - cf-forms
 */
+
+.alert {
+    .short-desc();
+}
 
 .alert__error {
     border: 1px solid @input-error;
