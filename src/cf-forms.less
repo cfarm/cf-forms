@@ -33,10 +33,11 @@
 // Color variables
 
 // .error
-@input-error:                   #d14124;
+
+@input-error:                   #eca87a;
 
 // .success
-@input-success:                 #009d38;
+@input-success:                 #905c8a;
 
 // .disabled
 @input-disabled:                #cdb5cd;
@@ -471,6 +472,10 @@ textarea {
 
 .alert {
     .short-desc();
+    padding: unit(15px / @font-size, em);
+    p:last-child {
+      margin-bottom: 0;
+    }
 }
 
 .alert__error {
