@@ -34,13 +34,13 @@
 // Color variables
 
 // .error
-@input-error:                   #ea130b;
+@input-error:                   #eca87a;
 
 // warning
 @input-warning:                 #ffb108;
 
 // .success
-@input-success:                 #009d38;
+@input-success:                 #905c8a;
 
 // Sizing variables
 
@@ -480,6 +480,10 @@ textarea {
 
 .alert {
     .short-desc();
+    padding: unit(15px / @font-size, em);
+    p:last-child {
+      margin-bottom: 0;
+    }
 }
 
 .alert__error {
