@@ -756,6 +756,123 @@ input[type=checkbox].custom-input {
 }
 
 /* topdoc
+  name: Form layouts
+  family: cfgov-forms
+  patterns:
+    - name: Form columns
+      markup: |
+        <div class="form-l">
+            <div class="form-l_col form-l_col-1-3">
+                Form layout column 1
+            </div>
+            <div class="form-l_col form-l_col-1-3">
+                Form layout column 2
+            </div>
+            <div class="form-l_col form-l_col-1-3">
+                Form layout column 3
+            </div>
+        </div>
+      codenotes:
+        - |
+          Structural cheat sheet:
+          -----------------------
+          .form-l
+            .form-l_col.form-l_col-1-3
+    - name: "Form layout modifier: flush"
+      markup: |
+        <div class="form-l form-l__flush">
+            <div class="form-l_col form-l_col-1-3">
+                Form layout column 1
+            </div>
+            <div class="form-l_col form-l_col-1-3">
+                Form layout column 2
+            </div>
+            <div class="form-l_col form-l_col-1-3">
+                Form layout column 3
+            </div>
+        </div>
+      codenotes:
+        - .form-l.form-l__flush
+      notes:
+        - "Form layout columns have left and right gutters. If you want the
+          first and last column in each row to sit flush left/right
+          respectively then use the .form-l__flush modifier."
+    - name: Form layout columns
+      codenotes:
+        - .form-l_col
+        - .form-l_col-1-3
+      notes:
+        - ".form-l_col-1-3 elements are stacked for small screens. When the
+          viewport reaches 600px they transform into columns with one half the
+          width of the container. When the viewport reaches 768px their width
+          updates to one third of the container."
+  tags:
+    - cfgov-forms
+*/
+
+.form-l {
+    &__flush {
+        .respond-to-min(1060px, {
+            .grid_nested-col-group();
+        });
+    }
+    &__float {
+        .respond-to-min(1060px, {
+            .u-clearfix();
+            & .form-l_col {
+                display: block;
+                float: left;
+                margin-right: 0;
+            }
+        });
+    }
+}
+
+.form-l_col {
+    // Eyeballed to 30px considering line-height.
+    margin-bottom: unit(30px / @base-font-size-px, em);
+}
+
+.form-l_col-1-2 {
+    .respond-to-min(1060px, {
+        .grid_column(6);
+    });
+}
+
+.form-l_col-1-3 {
+    .respond-to-min(1060px, {
+        .grid_column(4);
+    });
+}
+
+.form-l_col-2-3 {
+    .respond-to-min(1060px, {
+        .grid_column(8);
+    });
+}
+
+.form-l_col-1 {
+    .respond-to-min(1060px, {
+        .grid_column(12);
+    });
+}
+
+.form-l-inset {
+    // The default margin between two columns is 30px.
+    // The following rules shrink it to 5px for the insets.
+    border-right-width: 2.5px;
+    + .form-l-inset { border-left-width: 2.5px; }
+    &:last-child { border-right-width: 15px; }
+
+    .form-l-inset_container {
+      padding: unit((@grid_gutter-width / 2) / @base-font-size-px, em)
+               unit((@grid_gutter-width / 2) / @base-font-size-px, em);
+      background: @gray-20;
+    }
+
+}
+
+/* topdoc
   name: EOF
   eof: true
 */
