@@ -712,6 +712,14 @@ textarea {
                 outline: 2px solid @pacific;
             }
         }
+        .is_disabled & {
+          box-shadow: 0px 0px 0px 1px #babbbd;
+          background-color: #75787b;
+          // Older IE does not support border-radius or box-shadow it's ok to use outline here.
+          .lt-ie9 & {
+              outline: 1px solid #babbbd;
+          }
+        }
     }
 }
 
