@@ -666,6 +666,7 @@ input[type=checkbox].custom-input {
     border: 1px solid #919395;
     &:checked {
         border-color: @darkgray;
+        outline: 1px solid @darkgray;
         .cf-icon();
         .cf-icon-approved();
         &:before {
@@ -680,8 +681,12 @@ input[type=checkbox].custom-input {
         border: 1px solid @input-border-focus;
         cursor: pointer;
     }
+    &[disabled=true],
+    &.disabled {
+        border-color: #babbbd;
+        background-color: #75787b;
+    }
 }
-
 
 
 /* topdoc
