@@ -433,48 +433,80 @@ textarea {
 }
 
 /* topdoc
-  name: Form-level validation message
-  family: cf-forms
+  name: Notifications
+  family: cf-notifications
+  notes:
+    - "Markup and styling for notifications"
   patterns:
-    - name: Form-level error alert
+    - name: Default Usage
       markup: |
-        <div class="alert alert__error">
-          <p><span class="cf-form_input-icon cf-icon cf-icon-delete-round" role="alert"></span>
-          The following form fields are incomplete or have errors:</p>
-          <ul class="list list__unstyled">
-            <li>What do you think would be a fair resolution to your issue?</li>
-            <li>Which of these best describes your issue?</li>
-            <li>Describe what happened so we can understand the issue...</li>
-          </ul>
-        </div>
-    - name: Form-level success alert
-      markup: |
-        <div class="alert alert__success">
-            <p><span class="cf-form_input-icon cf-icon cf-icon-delete-round" role="alert"></span>
-            15 results found</p>
+        <div class="cf-notification cf-notification__error">
+          <span class="cf-notification_icon cf-notification_icon__error cf-icon cf-icon-error-round"></span>
+          <p class="cf-notification_text">This is the default alert.</p>
         </div>
   tags:
-    - cf-forms
+    - cfgov-misc
 */
 
-.alert {
-    .short-desc();
-    padding: unit(15px / 16px, em);
-    p:last-child {
-      margin-bottom: 0;
+@notification-padding__px: 11px;
+
+.cf-notification {
+    display: none;
+    position: relative;
+
+    padding: @notification-padding__px;
+    padding-left: 40px;
+    margin-bottom: @notification-padding__px + 4px;
+
+    background: @gray-20;
+    border: 1px solid @gray;
+
+    &__error {
+        background: @redorange-20;
+        border-color: @input-error;
+    }
+
+    &__success {
+        background: @green-tint;
+        border-color: @input-success;
+    }
+
+    &__warning {
+        background: @gold-20;
+        border-color: @input-warning;
+    }
+
+    &_icon {
+        position: absolute;
+        top: @notification-padding__px + 2px;
+        left: @notification-padding__px + 4px;
+
+        color: @gray-20;
+        font-size: unit( 18px / @base-font-size-px, em );
+
+        &__error {
+            color: #d14327;
+        }
+
+        &__success {
+            color: #2cb34a;
+        }
+
+        &__warning {
+            color: #ff931b;
+        }
+    }
+
+    &_text {
+        .h4();
+        margin: 0;
+
+        .short-desc {
+            display: block;
+            font-size: @base-font-size-px;
+        }
     }
 }
-
-.alert__error {
-    border: 1px solid @input-error;
-    background-color: @input-error-bg;
-}
-
-.alert__success {
-    border: 1px solid @input-success;
-    background-color: @input-success-bg;
-}
-
 
 
 /* topdoc
