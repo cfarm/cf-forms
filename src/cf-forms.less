@@ -656,6 +656,32 @@ textarea {
     }
 }
 
+// The .focus class is only included for documentation demos and should not be used in production.
+input[type=checkbox].custom-input {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    -webkit-appearance: none;
+    background-color: white;
+    border: 1px solid #919395;
+    &:checked {
+        border-color: @darkgray;
+        .cf-icon();
+        .cf-icon-approved();
+        &:before {
+            position: absolute;
+            top: 1px;
+            left: 2px;
+        }
+    }
+    &:hover,
+    &:focus,
+    &.focus {
+        border: 1px solid @input-border-focus;
+        cursor: pointer;
+    }
+}
+
 
 
 /* topdoc
