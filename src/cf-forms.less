@@ -21,8 +21,13 @@
         @input-error
         @input-warning
         @input-success
-        @input-inset-bg;
+        @input-inset-bg
         @input-inset-selected
+        @checkbox-border
+        @checkbox-checked-border
+        @checkbox-border-disabled
+        @checkbox-bg-disabled
+        @input-active-bg;
   - name: Sizing
     codenotes:
       - |
@@ -48,6 +53,13 @@
 
 // .form-l-inset_container.is-checked
 @input-inset-selected:          #0be3f5;
+
+// checkbox, radio buttons
+@checkbox-border:               @gray-80;
+@checkbox-checked-border:       @darkgray;
+@checkbox-border-disabled:      @gray-50;
+@checkbox-bg-disabled:          @gray;
+@input-active-bg:               @pacific-50;
 
 // Sizing variables
 
@@ -581,8 +593,8 @@ textarea {
         z-index: 1;
         width: @input-width;
         height: @input-width;
-        background: @white;
-        outline: 1px solid @gray-80;
+        background: @input-bg;
+        outline: 1px solid @checkbox-border;
     }
     &_radio {
         // IE older than 9 does not support border-radius so checkboxes and
@@ -591,11 +603,11 @@ textarea {
         // box-shadow is being used instead of outline because outline
         // does not respect border-radius.
         outline: none;
-        box-shadow: 0px 0px 0px 1px @gray-80;
+        box-shadow: 0px 0px 0px 1px @checkbox-border;
         // Older IE does not support border-radius or box-shadow it's ok to
         // use outline here.
         .lt-ie9 & {
-            outline: 1px solid @gray-80;
+            outline: 1px solid @checkbox-border;
         }
     }
 
@@ -618,21 +630,21 @@ textarea {
     &_radio {
         .is-hovered &,
         .is-focused & {
-            border-color: @white;
-            outline: 2px solid @pacific;
+            border-color: @input-bg;
+            outline: 2px solid @input-border-focus;
         }
         .is-checked & {
-            background-color: @pacific;
-            border: 3px solid @white;
-            outline: 1px solid @pacific;
+            background-color: @input-border-focus;
+            border: 3px solid @input-bg;
+            outline: 1px solid @input-border-focus;
         }
         .is-checked.is-hovered &,
         .is-checked.is-focused & {
-            outline: 2px solid @pacific;
+            outline: 2px solid @input-border-focus;
         }
         .is-active & {
-            background-color: @pacific-50;
-            border: 3px solid @white;
+            background-color: @input-active-bg;
+            border: 3px solid @input-bg;
         }
     }
     &_radio {
@@ -640,11 +652,11 @@ textarea {
             // box-shadow is being used instead of outline because outline
             // does not respect border-radius.
             outline: none;
-            box-shadow: 0px 0px 0px 1px @pacific;
+            box-shadow: 0px 0px 0px 1px @input-border-focus;
             // Older IE does not support border-radius or box-shadow it's ok to
             // use outline here.
             .lt-ie9 & {
-                outline: 1px solid @pacific;
+                outline: 1px solid @input-border-focus;
             }
         }
         .is-hovered &,
@@ -654,19 +666,19 @@ textarea {
             // box-shadow is being used instead of outline because outline
             // does not respect border-radius.
             outline: none;
-            box-shadow: 0px 0px 0px 2px @pacific;
+            box-shadow: 0px 0px 0px 2px @input-border-focus;
             // Older IE does not support border-radius or box-shadow it's ok to
             // use outline here.
             .lt-ie9 & {
-                outline: 2px solid @pacific;
+                outline: 2px solid @input-border-focus;
             }
         }
         .is_disabled & {
-          box-shadow: 0px 0px 0px 1px #babbbd;
-          background-color: #75787b;
+          box-shadow: 0px 0px 0px 1px @checkbox-border-disabled;
+          background-color: @checkbox-bg-disabled;
           // Older IE does not support border-radius or box-shadow it's ok to use outline here.
           .lt-ie9 & {
-              outline: 1px solid #babbbd;
+              outline: 1px solid @checkbox-border-disabled;
           }
         }
     }
@@ -679,10 +691,10 @@ input[type=checkbox].custom-input {
     height: 20px;
     -webkit-appearance: none;
     background-color: white;
-    border: 1px solid #919395;
+    border: 1px solid @checkbox-border;
     &:checked {
-        border-color: @darkgray;
-        outline: 1px solid @darkgray;
+        border-color: @checkbox-checked-border;
+        outline: 1px solid @checkbox-checked-border;
         .cf-icon();
         .cf-icon-approved();
         &:before {
@@ -699,8 +711,8 @@ input[type=checkbox].custom-input {
     }
     &[disabled=true],
     &.disabled {
-        border-color: #babbbd;
-        background-color: #75787b;
+        border-color: @checkbox-border-disabled;
+        background-color: @checkbox-bg-disabled;
     }
 }
 
