@@ -23,7 +23,7 @@
         @input-warning
         @input-success
         @input-disabled
-        @input-inset-bg;
+        @input-inset-bg
         @input-inset-selected
         @checkbox-border
         @checkbox-checked-border
@@ -68,6 +68,9 @@
 @checkbox-border-disabled:      desaturate(#0000ff, 10%);
 @checkbox-bg-disabled:          desaturate(#110aaf, 50%);
 @input-active-bg:               lighten(#110aaf, 30%);
+
+// .disabled
+@input-disabled:                #00ee38;
 
 // Sizing variables
 
@@ -904,7 +907,6 @@ input[type=checkbox].custom-input {
 
 }
 
-
 /* topdoc
     name: Custom select menus via jquery.custom-input
     family: cfgov-forms
@@ -912,22 +914,24 @@ input[type=checkbox].custom-input {
     - name: Custom select menu demo with initialization markup
       markup: |
         <div class="custom-select">
-            <select>
+            <select class="custom-select_select">
                 <option value="option1">Option 1</option>
                 <option value="option2">Option 2</option>
                 <option value="option3">Option 3</option>
                 <option value="option4">Option 4</option>
             </select>
             <span class="custom-select_icon cf-icon cf-icon-down"></span>
+            <span class="custom-select_text custom-select_placeholder">Please select</span>
         </div>
       codenotes:
         - |
           Structural cheat sheet:
           -----------------------
           .custom-select
-            select
+            select.custom-select_select
               option
             .custom-select-icon
+            .custom-select_text
       notes:
         - "Use the markup structure above to add .custom-select elements.
           It is meant to allow for cases where JavaScript is unavailable.
@@ -992,24 +996,26 @@ input[type=checkbox].custom-input {
 
 .custom-select {
 
-    & {
-        .is-enabled& {
-            overflow: hidden;
-            position: relative;
-            min-height: unit((@base-line-height-px + (4px * 2)) / @base-font-size-px, em);
-            // Since an input-group_item can overlap another we need to use z-index
-            // is needed to allow the focused input to pop over unfocused inputs.
-            z-index: 1;
-            border: solid 1px @gray-80;
-            background: @white;
-        }
+    &.is-enabled {
+        overflow: hidden;
+        position: relative;
+        min-height: unit((@base-line-height-px + (4px * 2)) / @base-font-size-px, em);
+        // Since an input-group_item can overlap another we need to use z-index
+        // is needed to allow the focused input to pop over unfocused inputs.
+        z-index: 1;
+        border: solid 1px @input-border;
+        background: @input-bg;
+    }
+
+    &.disabled {
+        background: @input-disabled;
     }
 
     &.is-hovered,
     &.is-focused {
         z-index: 2;
-        border-color: @pacific;
-        outline: 1px solid @pacific;
+        border-color: @input-border-focus;
+        outline: 1px solid @input-border-focus;
     }
 
     &_icon {
@@ -1025,9 +1031,9 @@ input[type=checkbox].custom-input {
                  unit( 6px / @base-font-size-px, em );
         // This will overlay .custom-select_text and make it appear as if any
         // long words get cut off before they touch the icon.
-        border-left: 4px solid @white;
-        background: @gray-10;
-        color: @gray-50;
+        border-left: 4px solid @input-bg;
+        background: @input-disabled;
+        color: @input-border;
         line-height: @base-line-height;
         text-align: center;
         .is-enabled & {
@@ -1044,11 +1050,11 @@ input[type=checkbox].custom-input {
         z-index: 1;
         font-family: Arial, sans-serif;
         line-height: @base-line-height;
-        color: @black;
+        color: @text;
     }
 
     &_placeholder {
-        color: @gray;
+        color: @input-placeholder;
     }
 
     &_select {
@@ -1063,7 +1069,7 @@ input[type=checkbox].custom-input {
         border-radius: 0;
         background-color: transparent;
         background-image: none;
-        color: @black;
+        color: @text;
         -webkit-appearance: none;
         box-shadow: none;
 
@@ -1071,6 +1077,10 @@ input[type=checkbox].custom-input {
         .is-focused & {
             outline: none;
         }
+        .is-enabled & {
+            opacity: 0;
+        }
+
     }
 
     &__month {
