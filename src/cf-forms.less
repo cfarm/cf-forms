@@ -806,9 +806,22 @@ input[type=checkbox].custom-input {
     &:last-child { border-right-width: 15px; }
 
     .form-l-inset_container {
-      padding: unit((@grid_gutter-width / 2) / @base-font-size-px, em)
-               unit((@grid_gutter-width / 2) / @base-font-size-px, em);
-      background: @gray-20;
+        padding: unit((@grid_gutter-width / 2) / @base-font-size-px, em)
+                 unit((@grid_gutter-width / 2) / @base-font-size-px, em);
+        background: @gray-20;
+        &.is-checked {
+            background-color: #cce3f5;
+            outline: 2px solid @pacific;
+        }
+        &.is-hovered,
+        &:hover,
+        &:focus {
+            cursor: pointer;
+            outline: 2px solid @pacific;
+            label {
+                cursor: pointer;
+            }
+        }
     }
 
 }
