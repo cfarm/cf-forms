@@ -30,6 +30,9 @@
         @checkbox-border-disabled
         @checkbox-bg-disabled
         @input-active-bg
+        @input-range-bg
+        @input-range-border
+        @input-range-handle
   - name: Sizing
     codenotes:
       - |
@@ -71,6 +74,11 @@
 
 // .disabled
 @input-disabled:                #00ee38;
+
+// range input
+@input-range-bg:                @gray-80;
+@input-range-border:            @gray-50;
+@input-range-handle:            @gray-10;
 
 // Sizing variables
 
@@ -1115,18 +1123,19 @@ input[type=range]:focus {
 }
 
 input[type=range]::-webkit-slider-runnable-track {
-  background: #bdbdbd;
-  border: 1px solid #757575;
+  background: @input-range-bg;
+  border: 1px solid @input-range-border;
+  border-radius: 8px;
   cursor: pointer;
-  height: 1.2rem;
+  height: 11px;
   width: 100%;
 }
 
 input[type=range]::-moz-range-track {
-  background: @input-bg;
-  border: 1px solid #757575;
+  background: @input-range-bg;
+  border: 1px solid @input-range-border;
   cursor: pointer;
-  height: 1.2rem;
+  height: 11px;
   width: 100%;
 }
 
@@ -1134,24 +1143,24 @@ input[type=range]::-ms-track {
   background: transparent;
   color: transparent;
   cursor: pointer;
-  height: 1.2rem;
+  height: 11px;
   width: 100%;
 }
 
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  border: 1px solid #757575;
+  border: 1px solid @input-range-border;
   height: 2.2rem;
   border-radius: 1.5rem;
-  background: #eeeeee;
+  background: @input-range-handle;
   cursor: pointer;
   margin-top: -.65rem;  
   width: 2.2rem;
 }
 
 input[type=range]::-moz-range-thumb {
-  background: #eeeeee;
-  border: 1px solid #757575;
+  background: @input-range-handle;
+  border: 1px solid @input-range-border;
   border-radius: 1.5rem;
   cursor: pointer;
   height: 2.2rem;
@@ -1159,8 +1168,8 @@ input[type=range]::-moz-range-thumb {
 }
 
 input[type=range]::-ms-thumb {
-  background: #eeeeee;
-  border: 1px solid #757575;
+  background: @input-range-handle;
+  border: 1px solid @input-range-border;
   border-radius: 1.5rem;
   cursor: pointer;
   height: 2.2rem;
@@ -1168,14 +1177,14 @@ input[type=range]::-ms-thumb {
 }
 
 input[type=range]::-ms-fill-lower {
-  background: #bdbdbd;
-  border: 1px solid #757575;
+  background: @input-range-bg;
+  border: 1px solid @input-range-border;
   border-radius: 2rem;
 }
 
 input[type=range]::-ms-fill-upper {
-  background: #bdbdbd;
-  border: 1px solid #757575;
+  background: @input-range-bg;
+  border: 1px solid @input-range-border;
   border-radius: 2rem;
 }
 
