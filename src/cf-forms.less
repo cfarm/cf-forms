@@ -23,6 +23,8 @@
         @input-warning
         @input-success
         @input-disabled
+        @input-inset-bg;
+        @input-inset-selected
   - name: Sizing
     codenotes:
       - |
@@ -48,6 +50,12 @@
 
 // .form-label-helper-text
 @label-helper:                  #ffb108;
+
+// .form-l-inset_container
+@input-inset-bg:                #ccc002;
+
+// .form-l-inset_container.is-checked
+@input-inset-selected:          #0be3f5;
 
 // Sizing variables
 
@@ -867,16 +875,16 @@ input[type=checkbox].custom-input {
     .form-l-inset_container {
         padding: unit((@grid_gutter-width / 2) / @base-font-size-px, em)
                  unit((@grid_gutter-width / 2) / @base-font-size-px, em);
-        background: @gray-20;
+        background: @input-inset-bg;
         &.is-checked {
-            background-color: #cce3f5;
-            outline: 2px solid @pacific;
+            background-color: @input-inset-selected;
+            outline: 2px solid @input-border-focus;
         }
         &.is-hovered,
         &:hover,
         &:focus {
             cursor: pointer;
-            outline: 2px solid @pacific;
+            outline: 2px solid @input-border-focus;
             label {
                 cursor: pointer;
             }
