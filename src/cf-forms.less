@@ -512,7 +512,7 @@ input[type=range]::-webkit-slider-thumb {
   border-radius: 50%;
   background: @input-range-handle;
   cursor: pointer;
-  margin-top: -.65rem;  
+  margin-top: -18px;  
   width: 45px;
 }
 
@@ -546,7 +546,8 @@ input[type=range]::-ms-fill-upper {
   border-radius: 2rem;
 }
 
-input[type=range]:focus {
+input[type=range]:focus,
+input[type=range].focus {
     &::-webkit-slider-thumb {
         background: @input-inset-selected;
         border: 2px solid @input-border-focus;
