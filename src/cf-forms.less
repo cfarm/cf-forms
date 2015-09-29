@@ -1150,30 +1150,30 @@ input[type=range]::-ms-track {
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   border: 1px solid @input-range-border;
-  height: 2.2rem;
-  border-radius: 1.5rem;
+  height: 45px;
+  border-radius: 50%;
   background: @input-range-handle;
   cursor: pointer;
   margin-top: -.65rem;  
-  width: 2.2rem;
+  width: 45px;
 }
 
 input[type=range]::-moz-range-thumb {
   background: @input-range-handle;
   border: 1px solid @input-range-border;
-  border-radius: 1.5rem;
+  border-radius: 50%;
   cursor: pointer;
-  height: 2.2rem;
-  width: 2.2rem;
+  height: 45px;
+  width: 45px;
 }
 
 input[type=range]::-ms-thumb {
   background: @input-range-handle;
   border: 1px solid @input-range-border;
-  border-radius: 1.5rem;
+  border-radius: 50%;
   cursor: pointer;
-  height: 2.2rem;
-  width: 2.2rem;
+  height: 45px;
+  width: 45px;
 }
 
 input[type=range]::-ms-fill-lower {
@@ -1188,16 +1188,21 @@ input[type=range]::-ms-fill-upper {
   border-radius: 2rem;
 }
 
-input[type=range]:focus::-webkit-slider-thumb {
-  border: 2px solid @input-border-focus;
-}
+input[type=range]:focus {
+    &::-webkit-slider-thumb {
+        background: @input-inset-selected;
+        border: 2px solid @input-border-focus;
+    }
 
-input[type=range]:focus::-moz-range-thumb {
-  border: 2px solid @input-border-focus;
-}
+    &::-moz-range-thumb {
+        background: @input-inset-selected;
+        border: 2px solid @input-border-focus;
+    }
 
-input[type=range]:focus::-ms-thumb {
-  border: 2px solid @input-border-focus;
+    &::-ms-thumb {
+        background: @input-inset-selected;
+        border: 2px solid @input-border-focus;
+    }
 }
 
 
