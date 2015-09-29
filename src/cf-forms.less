@@ -469,58 +469,58 @@ textarea {
 */
 
 input[type=range] {
+    width: 100%;
+    padding-left: 0;
     margin: 15px 0;
     -webkit-appearance: none;
     border: none;
-    padding-left: 0;
-    width: 100%;
     &::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 11px;
         background: @input-range-bg;
         border: 1px solid @input-range-border;
         border-radius: 8px;
-        cursor: pointer;
-        height: 11px;
-        width: 100%;
+        cursor: pointer;        
     }
     &::-moz-range-track {
+        width: 100%;
+        height: 11px;
         background: @input-range-bg;
         border: 1px solid @input-range-border;
         cursor: pointer;
-        height: 11px;
-        width: 100%;
     }
     &::-ms-track {
+        width: 100%;
+        height: 11px;
         background: transparent;
         color: transparent;
         cursor: pointer;
-        height: 11px;
-        width: 100%;
     }
     &::-webkit-slider-thumb {
+        width: 45px;
+        height: 45px;
+        margin-top: -18px;  
         -webkit-appearance: none;
         border: 1px solid @input-range-border;
-        height: 45px;
         border-radius: 50%;
         background: @input-range-handle;
         cursor: pointer;
-        margin-top: -18px;  
-        width: 45px;
     }
     &::-moz-range-thumb {
+        width: 45px;
+        height: 45px;
         background: @input-range-handle;
         border: 1px solid @input-range-border;
         border-radius: 50%;
         cursor: pointer;
-        height: 45px;
-        width: 45px;
     }
     &::-ms-thumb {
+        width: 45px;
+        height: 45px;
         background: @input-range-handle;
         border: 1px solid @input-range-border;
         border-radius: 50%;
         cursor: pointer;
-        height: 45px;
-        width: 45px;
     }
     &::-ms-fill-lower {
         background: @input-range-bg;
