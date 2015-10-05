@@ -77,13 +77,12 @@
 .form-label-helper-text {
     .micro-copy();
     color: @label-helper;
+    // 14px font-size value is from .micro-copy
     margin-bottom: unit(10px / 14px, em);
 }
 
-.form-label-error {
-    .error + & {
-      margin-top: unit(15px / 16px, em);      
-    }  
+.error + .form-label-error {
+    margin-top: unit(15px / @base-font-size-px, em);      
 }
 
 
@@ -224,6 +223,22 @@ textarea {
 .form-label-error .@{cf-forms_input-icon-class} {
     color: @input-error;
 }
+
+// Deprecated
+.error + .@{cf-forms_input-icon-class} {
+    color: @input-error;
+}
+
+// Deprecated
+.warning + .@{cf-forms_input-icon-class} {
+    color: @input-warning;
+}
+
+// Deprecated
+.success + .@{cf-forms_input-icon-class} {
+    color: @input-success;
+}
+
 
 
 /* topdoc
