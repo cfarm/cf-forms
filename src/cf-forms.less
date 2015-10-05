@@ -157,6 +157,22 @@
         - .error
       markup: |
         <input class="error" type="text" value="Invalid input" title="Test input">
+    - name: Warning state
+      codenotes:
+        - .warning
+      notes:
+        - "See the 'Form icons' section below for guidance on adding icons to
+           states."
+      markup: |
+        <input class="warning" type="text" value="Invalid input" title="Test input">
+    - name: Success state
+      codenotes:
+        - .success
+      notes:
+        - "See the 'Form icons' section below for guidance on adding icons to
+           states."
+      markup: |
+        <input class="success" type="text" value="Validated input" title="Test input">
     - name: Disabled state
       codenotes:
         - .disabled
@@ -178,11 +194,19 @@ textarea {
         border: 1px solid @input-error;
         outline: 1px solid @input-error;
     }
+    &.warning {
+        border: 1px solid @input-warning;
+        outline: 1px solid @input-warning;
+    }
+    &.success {
+        border: 1px solid @input-success;
+        outline: 1px solid @input-success;
+    }    
     &.disabled {
-        border-width: 2px;
         background-color: @input-disabled;
     }
 }
+
 
 /* topdoc
     name: Form icons
