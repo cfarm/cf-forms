@@ -237,21 +237,22 @@ textarea {
     color: @input-error;
 }
 
+@warn: `function(msg){console.log(msg ? msg : 'Deprecated');}`;
+
 // Deprecated
 .error + .@{cf-forms_input-icon-class} {
-    color: @input-error;
+    color: `@{warn}(), @{input-error}`
 }
 
 // Deprecated
-.warning + .@{cf-forms_input-icon-class} {
-    color: @input-warning;
+.warning + .@{cf-forms_input-icon-class}{
+    color: `@{warn}(), @{input-warning}`
 }
 
 // Deprecated
 .success + .@{cf-forms_input-icon-class} {
-    color: @input-success;
+    color: `@{warn}(), @{input-success}`
 }
-
 
 
 /* topdoc
