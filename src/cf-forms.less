@@ -240,18 +240,21 @@ textarea {
     color: @input-error;
 }
 
-@warn: `function(msg){console.log(msg ? msg : 'Deprecated');}`;
+// @warn: `function(msg){console.log(msg ? msg : 'Deprecated');}`;
 
-@depWarn: `
-(function(msg, val){
-  console.log(msg);
-  return val;
-})()
-`;
+// @depWarn: `
+// (function(msg, val){
+//   console.log(msg);
+//   return val;
+// })()
+// `;
 
 // Deprecated
 .error + .@{cf-forms_input-icon-class} {
-  color: `@{depWarn}('cf-forms input icons are deprecated!', @{input-warning})`;
+  color: `(function(){
+       console.log('cf-forms input icons are deprecated!');
+       return @{input-error};
+     })()`;
 }
 
 // Deprecated
