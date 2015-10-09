@@ -241,17 +241,17 @@ textarea {
 
 // Deprecated
 .error + .@{cf-forms_input-icon-class} {
-    color: `@{warn}(), @{input-error}`
+    color: `(function(){@{warn}()); return "@{input-error}";}())`
 }
 
 // Deprecated
 .warning + .@{cf-forms_input-icon-class}{
-    color: `@{warn}(), @{input-warning}`
+    color: `(function(){@{warn}()); return "@{input-warning}";}())`
 }
 
 // Deprecated
 .success + .@{cf-forms_input-icon-class} {
-    color: `@{warn}(), @{input-success}`
+    color: `(function(){@{warn}()); return "@{input-success}";}())`
 }
 
 
