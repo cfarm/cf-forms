@@ -20,7 +20,8 @@
     "cf-core": "^1.0.0",
     "cf-buttons": "^1.6.1",
     "cf-grid": "^1.0.0",
-    "cf-icons": "^1.0.0"
+    "cf-icons": "^1.0.0",
+    "cf-typography": "^1.0.1"
   },
   "exportsOverride": {
     "cf-*": {
