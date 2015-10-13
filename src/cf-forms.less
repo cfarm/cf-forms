@@ -34,6 +34,10 @@
         @input-range-border
         @input-range-handle
         @label-helper
+        @notification-bg
+        @notification-error
+        @notification-success
+        @notification-warning
   - name: Sizing
     codenotes:
       - |
@@ -80,6 +84,12 @@
 @input-range-bg:                #329d83;
 @input-range-border:            #009d88;
 @input-range-handle:            #dddd38;
+
+// .cf-notification
+@notification-bg:               #ccc888;
+@notification-error:            #eee222;
+@notification-success:          #dde333;
+@notification-warning:          #cff3fa;
 
 // Sizing variables
 
@@ -522,25 +532,25 @@ textarea {
     padding-left: 40px;
     margin-bottom: @notification-padding__px + 4px;
 
-    background: @gray-20;
-    border: 1px solid @gray;
+    background: @notification-bg;
+    border: 1px solid @input-border;
 
     &__visible {
       display: block;
     }
 
     &__error {
-        background: @redorange-20;
+        background: @notification-error;
         border-color: @input-error;
     }
 
     &__success {
-        background: @green-tint;
+        background: @notification-success;
         border-color: @input-success;
     }
 
     &__warning {
-        background: @gold-20;
+        background: @notification-warning;
         border-color: @input-warning;
     }
 
@@ -549,19 +559,19 @@ textarea {
         top: @notification-padding__px + 2px;
         left: @notification-padding__px + 4px;
 
-        color: @gray-20;
+        color: @notification-bg;
         font-size: unit( 18px / @base-font-size-px, em );
 
         &__error {
-            color: #d14327;
+            color: @input-error;
         }
 
         &__success {
-            color: #2cb34a;
+            color: @input-success;
         }
 
         &__warning {
-            color: #ff931b;
+            color: @input-warning;
         }
     }
 
