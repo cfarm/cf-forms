@@ -761,7 +761,43 @@ label
           <h2 class="docs-component_header"><span>Form layouts</span></h2>
           <div class="docs-patterns">
             <div class="docs-pattern">
-              <h3 class="docs-pattern_header">Form columns</h3>
+              <h3 class="docs-pattern_header">Form one-half columns</h3>
+              <section class="docs-pattern_pattern">
+<div class="form-l">
+    <div class="form-l_col form-l_col-1-3">
+        Form layout column 1
+    </div>
+    <div class="form-l_col form-l_col-1-2">
+        Form layout column 2
+    </div>
+</div>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;div class=&quot;form-l&quot;&gt;
+    &lt;div class=&quot;form-l_col form-l_col-1-3&quot;&gt;
+        Form layout column 1
+    &lt;/div&gt;
+    &lt;div class=&quot;form-l_col form-l_col-1-2&quot;&gt;
+        Form layout column 2
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-forms/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;div class=\&amp;quot;form-l\&amp;quot;&gt;\n    &lt;div class=\&amp;quot;form-l_col form-l_col-1-3\&amp;quot;&gt;\n        Form layout column 1\n    &lt;/div&gt;\n    &lt;div class=\&amp;quot;form-l_col form-l_col-1-2\&amp;quot;&gt;\n        Form layout column 2\n    &lt;/div&gt;\n&lt;/div&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>Structural cheat sheet:
+-----------------------
+.form-l
+  .form-l_col.form-l_col-1-2</code></pre>
+                  </li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+              <h3 class="docs-pattern_header">Form one-third columns</h3>
               <section class="docs-pattern_pattern">
 <div class="form-l">
     <div class="form-l_col form-l_col-1-3">
@@ -799,6 +835,9 @@ label
 .form-l
   .form-l_col.form-l_col-1-3</code></pre>
                   </li>
+                </ul>
+                <ul class="docs-notes">
+                  <li>.form-l_col-1-3 elements are stacked for small screens. When the viewport reaches 600px they transform into columns with one half the width of the container. When the viewport reaches 768px their width updates to one third of the container.</li>
                 </ul>
               </footer>
             </div>
@@ -840,7 +879,7 @@ label
                   </li>
                 </ul>
                 <ul class="docs-notes">
-                  <li>Form layout columns have left and right gutters. If you want the first and last column in each row to sit flush left/right respectively then use the .form-l__flush modifier. .form-l_col-1-3 elements are stacked for small screens. When the viewport reaches 600px they transform into columns with one half the width of the container. When the viewport reaches 768px their width updates to one third of the container.</li>
+                  <li>Form layout columns have left and right gutters. If you want the first and last column in each row to sit flush left/right respectively then use the .form-l__flush modifier.</li>
                 </ul>
               </footer>
             </div>
