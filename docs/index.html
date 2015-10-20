@@ -840,29 +840,34 @@ label
                   </li>
                 </ul>
                 <ul class="docs-notes">
-                  <li>Form layout columns have left and right gutters. If you want the first and last column in each row to sit flush left/right respectively then use the .form-l__flush modifier.</li>
-                </ul>
-              </footer>
-            </div>
-            <div class="docs-pattern">
-              <h3 class="docs-pattern_header">Form layout columns</h3>
-              <footer class="docs-pattern_footer">
-                <ul class="docs-codenotes">
-                  <li>
-                    <pre class="docs-code"><code>.form-l_col</code></pre>
-                  </li>
-                  <li>
-                    <pre class="docs-code"><code>.form-l_col-1-3</code></pre>
-                  </li>
-                </ul>
-                <ul class="docs-notes">
-                  <li>.form-l_col-1-3 elements are stacked for small screens. When the viewport reaches 600px they transform into columns with one half the width of the container. When the viewport reaches 768px their width updates to one third of the container.</li>
+                  <li>Form layout columns have left and right gutters. If you want the first and last column in each row to sit flush left/right respectively then use the .form-l__flush modifier. .form-l_col-1-3 elements are stacked for small screens. When the viewport reaches 600px they transform into columns with one half the width of the container. When the viewport reaches 768px their width updates to one third of the container.</li>
                 </ul>
               </footer>
             </div>
             <div class="docs-pattern">
               <h3 class="docs-pattern_header">Form layout inset</h3>
+              <section class="docs-pattern_pattern">
+<div class="form-l-inset">
+  <div class="form-l-inset_container">
+      <label class="custom-input_label"><span class="custom-input_text">
+          Yes
+      </span><input class="custom-input js-additional-field_trigger custom-input_input" type="radio" name="custom-input-example"><span class="custom-input_radio"></span></label>
+  </div>
+</div>
+
+              </section>
               <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;div class=&quot;form-l-inset&quot;&gt;
+  &lt;div class=&quot;form-l-inset_container&quot;&gt;
+      &lt;label class=&quot;custom-input_label&quot;&gt;&lt;span class=&quot;custom-input_text&quot;&gt;
+          Yes
+      &lt;/span&gt;&lt;input class=&quot;custom-input js-additional-field_trigger custom-input_input&quot; type=&quot;radio&quot; name=&quot;custom-input-example&quot;&gt;&lt;span class=&quot;custom-input_radio&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-forms/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;div class=\&amp;quot;form-l-inset\&amp;quot;&gt;\n  &lt;div class=\&amp;quot;form-l-inset_container\&amp;quot;&gt;\n      &lt;label class=\&amp;quot;custom-input_label\&amp;quot;&gt;&lt;span class=\&amp;quot;custom-input_text\&amp;quot;&gt;\n          Yes\n      &lt;/span&gt;&lt;input class=\&amp;quot;custom-input js-additional-field_trigger custom-input_input\&amp;quot; type=\&amp;quot;radio\&amp;quot; name=\&amp;quot;custom-input-example\&amp;quot;&gt;&lt;span class=\&amp;quot;custom-input_radio\&amp;quot;&gt;&lt;/span&gt;&lt;/label&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
                 <ul class="docs-codenotes">
                   <li>
                     <pre class="docs-code"><code>Structural cheat sheet:
