@@ -840,6 +840,7 @@ input[type=checkbox].custom-input {
     }
 }
 
+
 /* topdoc
   name: Form layouts
   family: cf-forms
@@ -881,17 +882,19 @@ input[type=checkbox].custom-input {
       notes:
         - "Form layout columns have left and right gutters. If you want the
           first and last column in each row to sit flush left/right
-          respectively then use the .form-l__flush modifier."
-    - name: Form layout columns
-      codenotes:
-        - .form-l_col
-        - .form-l_col-1-3
-      notes:
-        - ".form-l_col-1-3 elements are stacked for small screens. When the
+          respectively then use the .form-l__flush modifier. .form-l_col-1-3 elements are stacked for small screens. When the
           viewport reaches 600px they transform into columns with one half the
           width of the container. When the viewport reaches 768px their width
           updates to one third of the container."
     - name: Form layout inset
+      markup: |
+        <div class="form-l-inset">
+          <div class="form-l-inset_container">
+              <label class="custom-input_label"><span class="custom-input_text">
+                  Yes
+              </span><input class="custom-input js-additional-field_trigger custom-input_input" type="radio" name="custom-input-example"><span class="custom-input_radio"></span></label>
+          </div>
+        </div>
       codenotes:
         - |
           Structural cheat sheet:
@@ -951,15 +954,6 @@ input[type=checkbox].custom-input {
     });
 }
 
-
-// <div class="form-l-inset">
-//         <div class="form-l-inset_container">
-//             <label class="custom-input_label"><span class="custom-input_text">
-//                 Yes
-//             </span><input class="custom-input js-additional-field_trigger custom-input_input" type="radio" name="custom-input-example"><span class="custom-input_radio"></span></label>
-//         </div>
-//     </div>
-
 .form-l-inset {
     // The default margin between two columns is 30px.
     // The following rules shrink it to 5px for the insets.
@@ -987,6 +981,7 @@ input[type=checkbox].custom-input {
     }
 
 }
+
 
 /* topdoc
     name: Custom select menus via jquery.custom-input
