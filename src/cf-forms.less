@@ -733,7 +733,23 @@ input[type=checkbox].custom-input {
   name: Form layouts
   family: cf-forms
   patterns:
-    - name: Form columns
+    - name: Form one-half columns
+      markup: |
+        <div class="form-l">
+            <div class="form-l_col form-l_col-1-3">
+                Form layout column 1
+            </div>
+            <div class="form-l_col form-l_col-1-2">
+                Form layout column 2
+            </div>
+        </div>
+      codenotes:
+        - |
+          Structural cheat sheet:
+          -----------------------
+          .form-l
+            .form-l_col.form-l_col-1-2
+    - name: Form one-third columns
       markup: |
         <div class="form-l">
             <div class="form-l_col form-l_col-1-3">
@@ -752,6 +768,11 @@ input[type=checkbox].custom-input {
           -----------------------
           .form-l
             .form-l_col.form-l_col-1-3
+      notes:
+        - ".form-l_col-1-3 elements are stacked for small screens. When the
+          viewport reaches 600px they transform into columns with one half the
+          width of the container. When the viewport reaches 768px their width
+          updates to one third of the container."
     - name: "Form layout modifier: flush"
       markup: |
         <div class="form-l form-l__flush">
@@ -770,10 +791,7 @@ input[type=checkbox].custom-input {
       notes:
         - "Form layout columns have left and right gutters. If you want the
           first and last column in each row to sit flush left/right
-          respectively then use the .form-l__flush modifier. .form-l_col-1-3 elements are stacked for small screens. When the
-          viewport reaches 600px they transform into columns with one half the
-          width of the container. When the viewport reaches 768px their width
-          updates to one third of the container."
+          respectively then use the .form-l__flush modifier."
     - name: Form layout inset
       markup: |
         <div class="form-l-inset">
