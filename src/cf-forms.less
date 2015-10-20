@@ -25,15 +25,15 @@
         @input-disabled
         @input-inset-bg
         @input-inset-selected
-        @checkbox-border
-        @checkbox-checked-border
-        @checkbox-border-disabled
-        @checkbox-bg-disabled
         @input-active-bg
         @input-range-bg
         @input-range-border
         @input-range-handle
         @label-helper
+        @checkbox-border
+        @checkbox-checked-border
+        @checkbox-border-disabled
+        @checkbox-bg-disabled
         @notification-bg
         @notification-error
         @notification-success
@@ -63,6 +63,9 @@
 
 // .form-label-helper-text
 @label-helper:                  #ffb108;
+
+// .disabled
+@input-disabled:                #cdb5cd;
 
 // .form-l-inset_container
 @input-inset-bg:                #ccc002;
@@ -886,6 +889,15 @@ input[type=checkbox].custom-input {
           viewport reaches 600px they transform into columns with one half the
           width of the container. When the viewport reaches 768px their width
           updates to one third of the container."
+    - name: Form layout inset
+      codenotes:
+        - |
+          Structural cheat sheet:
+          -----------------------
+          .form-l-inset
+            .form-l-inset_container
+      notes:
+        - ".form-l-inset_container elements have larger target areas for easier user interaction."
   tags:
     - cfgov-forms
 */
@@ -936,6 +948,15 @@ input[type=checkbox].custom-input {
         .grid_column(12);
     });
 }
+
+
+// <div class="form-l-inset">
+//         <div class="form-l-inset_container">
+//             <label class="custom-input_label"><span class="custom-input_text">
+//                 Yes
+//             </span><input class="custom-input js-additional-field_trigger custom-input_input" type="radio" name="custom-input-example"><span class="custom-input_radio"></span></label>
+//         </div>
+//     </div>
 
 .form-l-inset {
     // The default margin between two columns is 30px.
