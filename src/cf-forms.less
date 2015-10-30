@@ -794,12 +794,25 @@ input[type=checkbox].custom-input {
           respectively then use the .form-l__flush modifier."
     - name: Form layout inset
       markup: |
-        <div class="form-l-inset">
-          <div class="form-l-inset_container">
-              <label class="custom-input_label"><span class="custom-input_text">
-                  Yes
-              </span><input class="custom-input js-additional-field_trigger custom-input_input" type="radio" name="custom-input-example"><span class="custom-input_radio"></span></label>
-          </div>
+        <div class="form-l form-l__flush">
+            <div class="form-l_col form-l_col-1-2 form-l-inset">
+                <div class="form-l-inset_container">
+                    <input class="cf-input cf-input_hidden" type="radio" name="cf-input-example_default-inset" id="cf-input-example_default-inset">
+                    <label class="cf-input_label" for="cf-input-example_default-inset">
+                        <span class="cf-input_text">Yes</span>
+                    </label>
+                    <span class="cf-input_radio"></span>
+                </div>
+            </div>
+            <div class="form-l_col form-l_col-1-2 form-l-inset">
+                <div class="form-l-inset_container">
+                    <input class="cf-input cf-input_hidden" type="radio" name="cf-input-example_default-inset" id="cf-input-example_default-inset2">
+                    <label class="cf-input_label" for="cf-input-example_default-inset2">
+                        <span class="cf-input_text">No</span>
+                    </label>
+                    <span class="cf-input_radio"></span>
+                </div>
+            </div>
         </div>
       codenotes:
         - |
