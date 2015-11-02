@@ -552,6 +552,7 @@ textarea {
         // doesn't stick out from underneath .input_checkbox or .input_radio.
            -moz-appearance: none;
         -webkit-appearance: none;
+
     }
 
     &_label {
@@ -633,17 +634,14 @@ textarea {
         width: @input-width;
         height: @input-width;
         background: @input-bg;
-        // IE older than 9 does not support border-radius so checkboxes and
-        // radio buttons will look the same.
         border-radius: 100%;
         // box-shadow is being used instead of outline because outline
         // does not respect border-radius.
         box-shadow: 0px 0px 0px 1px @checkbox-border;
         outline: none;
-        // Older IE does not support border-radius or box-shadow it's ok to
-        // use outline here.
+        // IE8 does not support border-radius so we will degrade to the default browser radio button style.
         .lt-ie9 & {
-            outline: 1px solid @checkbox-border;
+            display: none !important;
         }
         input:checked ~ &,
         input:checked + label + & {
@@ -651,11 +649,6 @@ textarea {
             // does not respect border-radius.
             outline: none;
             box-shadow: 0px 0px 0px 1px @input-border-focus;
-            // Older IE does not support border-radius or box-shadow it's ok to
-            // use outline here.
-            .lt-ie9 & {
-                outline: 1px solid @input-border-focus;
-            }
         }
         :hover ~ &,
         :focus ~ &,
@@ -664,20 +657,11 @@ textarea {
             // does not respect border-radius.
             outline: none;
             box-shadow: 0px 0px 0px 2px @input-border-focus;
-            // Older IE does not support border-radius or box-shadow it's ok to
-            // use outline here.
-            .lt-ie9 & {
-                outline: 2px solid @input-border-focus;
-            }
         }
         [disabled="true"] ~ & {
           box-shadow: 0px 0px 0px 1px @checkbox-border-disabled;
           background-color: @checkbox-bg-disabled;
           cursor: default;
-          // Older IE does not support border-radius or box-shadow it's ok to use outline here.
-          .lt-ie9 & {
-              outline: 1px solid @checkbox-border-disabled;
-          }
         }
     }
 }
