@@ -577,182 +577,104 @@
             </div>
           </div>
         </div>
-        <div id="custom-checkboxes-and-radio-buttons-via-jquerycustom-input" class="docs-component">
-          <h2 class="docs-component_header"><span>Custom checkboxes and radio buttons via jquery.custom-input</span></h2>
+        <div id="checkboxes-and-radio-buttons" class="docs-component">
+          <h2 class="docs-component_header"><span>Checkboxes and radio buttons</span></h2>
           <div class="docs-component_intro">
             <ul class="docs-notes">
-              <li>This plugin auto-initiates and will transform your initial HTML by adding more markup and classes. If JavaScript is unavailable the new elements and classes won't be added and won't interfere with default input behavior.</li>
-              <li>You MUST wrap your input.custom-input in a label.</li>
-              <li>Remember to use 'for' and 'id' attributes. This will allow IE less than 8 to trigger the input on label click.</li>
-              <li>JavaScript is used to add .is-hovered and .is-focused classes to .custom-input by detecting :hover and :focus on .custom-input.</li>
-              <li>JavaScript is used to detect change events to the input. By clicking the label element you change the checked property and the plugin will add the .is-checked class.</li>
+              <li>CSS for checkboxes and radio buttons requires following a specific HTML structure for each type of input, otherwise the styles will not be properly applied.</li>
+              <li>You MUST wrap your input.cf-input in a label.</li>
+              <li>Remember to use 'for' and 'id' attributes so that selected/checked styles function properly.</li>
+              <li>Remember to use the same 'name' attribute for each set of radio buttons.</li>
             </ul>
           </div>
           <div class="docs-patterns">
             <div class="docs-pattern">
-              <h3 class="docs-pattern_header">Custom checkbox demo with initialization markup</h3>
+              <h3 class="docs-pattern_header">Checkbox</h3>
               <section class="docs-pattern_pattern">
-<label for="custom-input_checkbox-lorem">
-    <input class="custom-input"
-           id="custom-input_checkbox-lorem"
-           type="checkbox"
-           name="checkboxes-styled"
-           value="lorem">
-    Lorem
+<label class="cf-input_label">
+    <input class="cf-input cf-input_checkbox" type="checkbox" name="option1" value="Option 1">
+    Option 1
 </label>
 <br>
-<label for="custom-input_checkbox-ipsum">
-    <input class="custom-input"
-           id="custom-input_checkbox-ipsum"
-           type="checkbox"
-           name="checkboxes-styled"
-           value="ipsum">
-    Ipsum
-</label>
-<br>
-<label for="custom-input_checkbox-dolor">
-    <input class="custom-input"
-           id="custom-input_checkbox-dolor"
-           type="checkbox"
-           name="checkboxes-styled"
-           value="dolor">
-    Dolor
+<label class="cf-input_label">
+    <input class="cf-input cf-input_checkbox" type="checkbox" name="option2" value="Option 2">
+    Option 2
 </label>
 
               </section>
               <footer class="docs-pattern_footer">
-                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;label for=&quot;custom-input_checkbox-lorem&quot;&gt;
-    &lt;input class=&quot;custom-input&quot;
-           id=&quot;custom-input_checkbox-lorem&quot;
-           type=&quot;checkbox&quot;
-           name=&quot;checkboxes-styled&quot;
-           value=&quot;lorem&quot;&gt;
-    Lorem
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;label class=&quot;cf-input_label&quot;&gt;
+    &lt;input class=&quot;cf-input cf-input_checkbox&quot; type=&quot;checkbox&quot; name=&quot;option1&quot; value=&quot;Option 1&quot;&gt;
+    Option 1
 &lt;/label&gt;
 &lt;br&gt;
-&lt;label for=&quot;custom-input_checkbox-ipsum&quot;&gt;
-    &lt;input class=&quot;custom-input&quot;
-           id=&quot;custom-input_checkbox-ipsum&quot;
-           type=&quot;checkbox&quot;
-           name=&quot;checkboxes-styled&quot;
-           value=&quot;ipsum&quot;&gt;
-    Ipsum
-&lt;/label&gt;
-&lt;br&gt;
-&lt;label for=&quot;custom-input_checkbox-dolor&quot;&gt;
-    &lt;input class=&quot;custom-input&quot;
-           id=&quot;custom-input_checkbox-dolor&quot;
-           type=&quot;checkbox&quot;
-           name=&quot;checkboxes-styled&quot;
-           value=&quot;dolor&quot;&gt;
-    Dolor
+&lt;label class=&quot;cf-input_label&quot;&gt;
+    &lt;input class=&quot;cf-input cf-input_checkbox&quot; type=&quot;checkbox&quot; name=&quot;option2&quot; value=&quot;Option 2&quot;&gt;
+    Option 2
 &lt;/label&gt;</code></pre>
                 <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
-                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-forms/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;label for=\&amp;quot;custom-input_checkbox-lorem\&amp;quot;&gt;\n    &lt;input class=\&amp;quot;custom-input\&amp;quot;\n           id=\&amp;quot;custom-input_checkbox-lorem\&amp;quot;\n           type=\&amp;quot;checkbox\&amp;quot;\n           name=\&amp;quot;checkboxes-styled\&amp;quot;\n           value=\&amp;quot;lorem\&amp;quot;&gt;\n    Lorem\n&lt;/label&gt;\n&lt;br&gt;\n&lt;label for=\&amp;quot;custom-input_checkbox-ipsum\&amp;quot;&gt;\n    &lt;input class=\&amp;quot;custom-input\&amp;quot;\n           id=\&amp;quot;custom-input_checkbox-ipsum\&amp;quot;\n           type=\&amp;quot;checkbox\&amp;quot;\n           name=\&amp;quot;checkboxes-styled\&amp;quot;\n           value=\&amp;quot;ipsum\&amp;quot;&gt;\n    Ipsum\n&lt;/label&gt;\n&lt;br&gt;\n&lt;label for=\&amp;quot;custom-input_checkbox-dolor\&amp;quot;&gt;\n    &lt;input class=\&amp;quot;custom-input\&amp;quot;\n           id=\&amp;quot;custom-input_checkbox-dolor\&amp;quot;\n           type=\&amp;quot;checkbox\&amp;quot;\n           name=\&amp;quot;checkboxes-styled\&amp;quot;\n           value=\&amp;quot;dolor\&amp;quot;&gt;\n    Dolor\n&lt;/label&gt;\n&amp;quot;}">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-forms/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;label class=\&amp;quot;cf-input_label\&amp;quot;&gt;\n    &lt;input class=\&amp;quot;cf-input cf-input_checkbox\&amp;quot; type=\&amp;quot;checkbox\&amp;quot; name=\&amp;quot;option1\&amp;quot; value=\&amp;quot;Option 1\&amp;quot;&gt;\n    Option 1\n&lt;/label&gt;\n&lt;br&gt;\n&lt;label class=\&amp;quot;cf-input_label\&amp;quot;&gt;\n    &lt;input class=\&amp;quot;cf-input cf-input_checkbox\&amp;quot; type=\&amp;quot;checkbox\&amp;quot; name=\&amp;quot;option2\&amp;quot; value=\&amp;quot;Option 2\&amp;quot;&gt;\n    Option 2\n&lt;/label&gt;\n&amp;quot;}">
                   <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
                 </form>
                 <ul class="docs-codenotes">
                   <li>
                     <pre class="docs-code"><code>Structural cheat sheet:
 -----------------------
-label
-  input[type=checkbox].custom-input</code></pre>
+label.cf-input_label
+  input[type=checkbox].cf-input</code></pre>
                   </li>
                 </ul>
                 <ul class="docs-notes">
-                  <li>Use the markup structure above to add .custom-input elements.</li>
+                  <li>Use the markup structure above to add checkbox .cf-input elements.</li>
                 </ul>
               </footer>
             </div>
             <div class="docs-pattern">
-              <h3 class="docs-pattern_header">Custom radio button demo with initialization markup</h3>
+              <h3 class="docs-pattern_header">Radio buttons</h3>
               <section class="docs-pattern_pattern">
-<label for="custom-input_radio-lorem">
-    <input class="custom-input"
-           id="custom-input_radio-lorem"
-           type="radio"
-           name="radios-styled"
-           value="lorem">
-    Lorem
+<label class="cf-input_label" for"yes">
+    <span class="cf-input_text">Yes</span>
+    <input class="cf-input cf-input_hidden" type="radio" name="cf-input-example_default" id="yes">
+    <span class="cf-input_radio"></span>
 </label>
 <br>
-<label for="custom-input_radio-ipsum">
-    <input class="custom-input"
-           id="custom-input_radio-ipsum"
-           type="radio"
-           name="radios-styled"
-           value="ipsum">
-    Ipsum
-</label>
-<br>
-<label for="custom-input_radio-dolor">
-    <input class="custom-input"
-           id="custom-input_radio-dolor"
-           type="radio"
-           name="radios-styled"
-           value="dolor">
-    Dolor
+<label class="cf-input_label" for="no">
+    <span class="cf-input_text">No</span>
+    <input class="cf-input cf-input_hidden" type="radio" name="cf-input-example_default" id="no">
+    <span class="cf-input_radio"></span>
 </label>
 
               </section>
               <footer class="docs-pattern_footer">
-                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;label for=&quot;custom-input_radio-lorem&quot;&gt;
-    &lt;input class=&quot;custom-input&quot;
-           id=&quot;custom-input_radio-lorem&quot;
-           type=&quot;radio&quot;
-           name=&quot;radios-styled&quot;
-           value=&quot;lorem&quot;&gt;
-    Lorem
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;label class=&quot;cf-input_label&quot; for&quot;yes&quot;&gt;
+    &lt;span class=&quot;cf-input_text&quot;&gt;Yes&lt;/span&gt;
+    &lt;input class=&quot;cf-input cf-input_hidden&quot; type=&quot;radio&quot; name=&quot;cf-input-example_default&quot; id=&quot;yes&quot;&gt;
+    &lt;span class=&quot;cf-input_radio&quot;&gt;&lt;/span&gt;
 &lt;/label&gt;
 &lt;br&gt;
-&lt;label for=&quot;custom-input_radio-ipsum&quot;&gt;
-    &lt;input class=&quot;custom-input&quot;
-           id=&quot;custom-input_radio-ipsum&quot;
-           type=&quot;radio&quot;
-           name=&quot;radios-styled&quot;
-           value=&quot;ipsum&quot;&gt;
-    Ipsum
-&lt;/label&gt;
-&lt;br&gt;
-&lt;label for=&quot;custom-input_radio-dolor&quot;&gt;
-    &lt;input class=&quot;custom-input&quot;
-           id=&quot;custom-input_radio-dolor&quot;
-           type=&quot;radio&quot;
-           name=&quot;radios-styled&quot;
-           value=&quot;dolor&quot;&gt;
-    Dolor
+&lt;label class=&quot;cf-input_label&quot; for=&quot;no&quot;&gt;
+    &lt;span class=&quot;cf-input_text&quot;&gt;No&lt;/span&gt;
+    &lt;input class=&quot;cf-input cf-input_hidden&quot; type=&quot;radio&quot; name=&quot;cf-input-example_default&quot; id=&quot;no&quot;&gt;
+    &lt;span class=&quot;cf-input_radio&quot;&gt;&lt;/span&gt;
 &lt;/label&gt;</code></pre>
                 <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
-                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-forms/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;label for=\&amp;quot;custom-input_radio-lorem\&amp;quot;&gt;\n    &lt;input class=\&amp;quot;custom-input\&amp;quot;\n           id=\&amp;quot;custom-input_radio-lorem\&amp;quot;\n           type=\&amp;quot;radio\&amp;quot;\n           name=\&amp;quot;radios-styled\&amp;quot;\n           value=\&amp;quot;lorem\&amp;quot;&gt;\n    Lorem\n&lt;/label&gt;\n&lt;br&gt;\n&lt;label for=\&amp;quot;custom-input_radio-ipsum\&amp;quot;&gt;\n    &lt;input class=\&amp;quot;custom-input\&amp;quot;\n           id=\&amp;quot;custom-input_radio-ipsum\&amp;quot;\n           type=\&amp;quot;radio\&amp;quot;\n           name=\&amp;quot;radios-styled\&amp;quot;\n           value=\&amp;quot;ipsum\&amp;quot;&gt;\n    Ipsum\n&lt;/label&gt;\n&lt;br&gt;\n&lt;label for=\&amp;quot;custom-input_radio-dolor\&amp;quot;&gt;\n    &lt;input class=\&amp;quot;custom-input\&amp;quot;\n           id=\&amp;quot;custom-input_radio-dolor\&amp;quot;\n           type=\&amp;quot;radio\&amp;quot;\n           name=\&amp;quot;radios-styled\&amp;quot;\n           value=\&amp;quot;dolor\&amp;quot;&gt;\n    Dolor\n&lt;/label&gt;\n&amp;quot;}">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-forms/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;label class=\&amp;quot;cf-input_label\&amp;quot; for\&amp;quot;yes\&amp;quot;&gt;\n    &lt;span class=\&amp;quot;cf-input_text\&amp;quot;&gt;Yes&lt;/span&gt;\n    &lt;input class=\&amp;quot;cf-input cf-input_hidden\&amp;quot; type=\&amp;quot;radio\&amp;quot; name=\&amp;quot;cf-input-example_default\&amp;quot; id=\&amp;quot;yes\&amp;quot;&gt;\n    &lt;span class=\&amp;quot;cf-input_radio\&amp;quot;&gt;&lt;/span&gt;\n&lt;/label&gt;\n&lt;br&gt;\n&lt;label class=\&amp;quot;cf-input_label\&amp;quot; for=\&amp;quot;no\&amp;quot;&gt;\n    &lt;span class=\&amp;quot;cf-input_text\&amp;quot;&gt;No&lt;/span&gt;\n    &lt;input class=\&amp;quot;cf-input cf-input_hidden\&amp;quot; type=\&amp;quot;radio\&amp;quot; name=\&amp;quot;cf-input-example_default\&amp;quot; id=\&amp;quot;no\&amp;quot;&gt;\n    &lt;span class=\&amp;quot;cf-input_radio\&amp;quot;&gt;&lt;/span&gt;\n&lt;/label&gt;\n&amp;quot;}">
                   <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
                 </form>
                 <ul class="docs-codenotes">
                   <li>
                     <pre class="docs-code"><code>Structural cheat sheet:
 -----------------------
-label
-  input[type=radio].custom-input</code></pre>
+label.cf-input_label
+  span.cf-input_text
+  input[type=radio].cf-input.cf-input_hidden
+  span.cf-input_radio</code></pre>
                   </li>
                 </ul>
                 <ul class="docs-notes">
-                  <li>Use the markup structure above to add .custom-input elements.</li>
+                  <li>Use the markup structure above to add radio button .cf-input elements.</li>
+                  <li>Radio buttons require extra markup to apply custom styles.</li>
                 </ul>
-              </footer>
-            </div>
-            <div class="docs-pattern">
-              <h3 class="docs-pattern_header">JavaScript setup</h3>
-              <section class="docs-pattern_pattern">
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="../../static/js/jquery.custom-input.js"></script>
-
-              </section>
-              <footer class="docs-pattern_footer">
-                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;script src=&quot;//code.jquery.com/jquery-1.11.0.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;../../static/js/jquery.custom-input.js&quot;&gt;&lt;/script&gt;</code></pre>
-                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
-                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-forms/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;script src=\&amp;quot;//code.jquery.com/jquery-1.11.0.min.js\&amp;quot;&gt;&lt;/script&gt;\n&lt;script src=\&amp;quot;../../static/js/jquery.custom-input.js\&amp;quot;&gt;&lt;/script&gt;\n&amp;quot;}">
-                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
-                </form>
               </footer>
             </div>
           </div>
@@ -797,6 +719,45 @@ label
               </footer>
             </div>
             <div class="docs-pattern">
+<<<<<<< HEAD
+              <h3 class="docs-pattern_header">Form one-half columns</h3>
+              <section class="docs-pattern_pattern">
+<div class="form-l">
+    <div class="form-l_col form-l_col-1-3">
+        Form layout column 1
+    </div>
+    <div class="form-l_col form-l_col-1-2">
+        Form layout column 2
+    </div>
+</div>
+
+              </section>
+              <footer class="docs-pattern_footer">
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;div class=&quot;form-l&quot;&gt;
+    &lt;div class=&quot;form-l_col form-l_col-1-3&quot;&gt;
+        Form layout column 1
+    &lt;/div&gt;
+    &lt;div class=&quot;form-l_col form-l_col-1-2&quot;&gt;
+        Form layout column 2
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-forms/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;div class=\&amp;quot;form-l\&amp;quot;&gt;\n    &lt;div class=\&amp;quot;form-l_col form-l_col-1-3\&amp;quot;&gt;\n        Form layout column 1\n    &lt;/div&gt;\n    &lt;div class=\&amp;quot;form-l_col form-l_col-1-2\&amp;quot;&gt;\n        Form layout column 2\n    &lt;/div&gt;\n&lt;/div&gt;\n&amp;quot;}">
+                  <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
+                </form>
+                <ul class="docs-codenotes">
+                  <li>
+                    <pre class="docs-code"><code>Structural cheat sheet:
+-----------------------
+.form-l
+  .form-l_col.form-l_col-1-2</code></pre>
+                  </li>
+                </ul>
+              </footer>
+            </div>
+            <div class="docs-pattern">
+=======
+>>>>>>> forms
               <h3 class="docs-pattern_header">Form one-third columns</h3>
               <section class="docs-pattern_pattern">
 <div class="form-l">
@@ -886,16 +847,39 @@ label
             <div class="docs-pattern">
               <h3 class="docs-pattern_header">Form layout inset</h3>
               <section class="docs-pattern_pattern">
+<<<<<<< HEAD
 <div class="form-l-inset">
   <div class="form-l-inset_container">
       <label class="custom-input_label"><span class="custom-input_text">
           Yes
       </span><input class="custom-input js-additional-field_trigger custom-input_input" type="radio" name="custom-input-example"><span class="custom-input_radio"></span></label>
   </div>
+=======
+<div class="form-l form-l__flush">
+    <div class="form-l_col form-l_col-1-2 form-l-inset">
+        <div class="form-l-inset_container">
+            <input class="cf-input cf-input_hidden" type="radio" name="cf-input-example_default-inset" id="cf-input-example_default-inset">
+            <label class="cf-input_label" for="cf-input-example_default-inset">
+                <span class="cf-input_text">Yes</span>
+            </label>
+            <span class="cf-input_radio"></span>
+        </div>
+    </div>
+    <div class="form-l_col form-l_col-1-2 form-l-inset">
+        <div class="form-l-inset_container">
+            <input class="cf-input cf-input_hidden" type="radio" name="cf-input-example_default-inset" id="cf-input-example_default-inset2">
+            <label class="cf-input_label" for="cf-input-example_default-inset2">
+                <span class="cf-input_text">No</span>
+            </label>
+            <span class="cf-input_radio"></span>
+        </div>
+    </div>
+>>>>>>> forms
 </div>
 
               </section>
               <footer class="docs-pattern_footer">
+<<<<<<< HEAD
                 <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;div class=&quot;form-l-inset&quot;&gt;
   &lt;div class=&quot;form-l-inset_container&quot;&gt;
       &lt;label class=&quot;custom-input_label&quot;&gt;&lt;span class=&quot;custom-input_text&quot;&gt;
@@ -905,6 +889,30 @@ label
 &lt;/div&gt;</code></pre>
                 <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
                   <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-forms/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;div class=\&amp;quot;form-l-inset\&amp;quot;&gt;\n  &lt;div class=\&amp;quot;form-l-inset_container\&amp;quot;&gt;\n      &lt;label class=\&amp;quot;custom-input_label\&amp;quot;&gt;&lt;span class=\&amp;quot;custom-input_text\&amp;quot;&gt;\n          Yes\n      &lt;/span&gt;&lt;input class=\&amp;quot;custom-input js-additional-field_trigger custom-input_input\&amp;quot; type=\&amp;quot;radio\&amp;quot; name=\&amp;quot;custom-input-example\&amp;quot;&gt;&lt;span class=\&amp;quot;custom-input_radio\&amp;quot;&gt;&lt;/span&gt;&lt;/label&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n&amp;quot;}">
+=======
+                <pre class="docs-code docs-pattern_markup"><code data-language="html">&lt;div class=&quot;form-l form-l__flush&quot;&gt;
+    &lt;div class=&quot;form-l_col form-l_col-1-2 form-l-inset&quot;&gt;
+        &lt;div class=&quot;form-l-inset_container&quot;&gt;
+            &lt;input class=&quot;cf-input cf-input_hidden&quot; type=&quot;radio&quot; name=&quot;cf-input-example_default-inset&quot; id=&quot;cf-input-example_default-inset&quot;&gt;
+            &lt;label class=&quot;cf-input_label&quot; for=&quot;cf-input-example_default-inset&quot;&gt;
+                &lt;span class=&quot;cf-input_text&quot;&gt;Yes&lt;/span&gt;
+            &lt;/label&gt;
+            &lt;span class=&quot;cf-input_radio&quot;&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-l_col form-l_col-1-2 form-l-inset&quot;&gt;
+        &lt;div class=&quot;form-l-inset_container&quot;&gt;
+            &lt;input class=&quot;cf-input cf-input_hidden&quot; type=&quot;radio&quot; name=&quot;cf-input-example_default-inset&quot; id=&quot;cf-input-example_default-inset2&quot;&gt;
+            &lt;label class=&quot;cf-input_label&quot; for=&quot;cf-input-example_default-inset2&quot;&gt;
+                &lt;span class=&quot;cf-input_text&quot;&gt;No&lt;/span&gt;
+            &lt;/label&gt;
+            &lt;span class=&quot;cf-input_radio&quot;&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
+                  <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-forms/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;div class=\&amp;quot;form-l form-l__flush\&amp;quot;&gt;\n    &lt;div class=\&amp;quot;form-l_col form-l_col-1-2 form-l-inset\&amp;quot;&gt;\n        &lt;div class=\&amp;quot;form-l-inset_container\&amp;quot;&gt;\n            &lt;input class=\&amp;quot;cf-input cf-input_hidden\&amp;quot; type=\&amp;quot;radio\&amp;quot; name=\&amp;quot;cf-input-example_default-inset\&amp;quot; id=\&amp;quot;cf-input-example_default-inset\&amp;quot;&gt;\n            &lt;label class=\&amp;quot;cf-input_label\&amp;quot; for=\&amp;quot;cf-input-example_default-inset\&amp;quot;&gt;\n                &lt;span class=\&amp;quot;cf-input_text\&amp;quot;&gt;Yes&lt;/span&gt;\n            &lt;/label&gt;\n            &lt;span class=\&amp;quot;cf-input_radio\&amp;quot;&gt;&lt;/span&gt;\n        &lt;/div&gt;\n    &lt;/div&gt;\n    &lt;div class=\&amp;quot;form-l_col form-l_col-1-2 form-l-inset\&amp;quot;&gt;\n        &lt;div class=\&amp;quot;form-l-inset_container\&amp;quot;&gt;\n            &lt;input class=\&amp;quot;cf-input cf-input_hidden\&amp;quot; type=\&amp;quot;radio\&amp;quot; name=\&amp;quot;cf-input-example_default-inset\&amp;quot; id=\&amp;quot;cf-input-example_default-inset2\&amp;quot;&gt;\n            &lt;label class=\&amp;quot;cf-input_label\&amp;quot; for=\&amp;quot;cf-input-example_default-inset2\&amp;quot;&gt;\n                &lt;span class=\&amp;quot;cf-input_text\&amp;quot;&gt;No&lt;/span&gt;\n            &lt;/label&gt;\n            &lt;span class=\&amp;quot;cf-input_radio\&amp;quot;&gt;&lt;/span&gt;\n        &lt;/div&gt;\n    &lt;/div&gt;\n&lt;/div&gt;\n&amp;quot;}">
+>>>>>>> forms
                   <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
                 </form>
                 <ul class="docs-codenotes">
