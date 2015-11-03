@@ -664,7 +664,6 @@ textarea {
         // doesn't stick out from underneath .input_checkbox or .input_radio.
            -moz-appearance: none;
         -webkit-appearance: none;
-
     }
 
     &_label {
@@ -764,10 +763,14 @@ textarea {
         }
         :hover ~ &,
         :focus ~ &,
-        .focus ~ & {
+        .focus ~ &,
+        :checked:hover ~ &, 
+        :checked:focus ~ &,
+        :checked.focus ~ & {
             // box-shadow is being used instead of outline because outline
             // does not respect border-radius.
             outline: none;
+            border-color: @input-bg;
             box-shadow: 0px 0px 0px 2px @input-border-focus;
         }
         [disabled="true"] ~ & {
@@ -987,6 +990,9 @@ textarea {
 
         &.selected .cf-input_label,
         &.focus .cf-input_label,
+        &:focus .cf-input_label,
+        &:hover .cf-input_label,
+        input:focus ~ .cf-input_label,
         input:checked ~ .cf-input_label +  {
             outline: 2px solid @input-border-focus;
         }
