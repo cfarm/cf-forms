@@ -711,6 +711,7 @@ textarea {
         &:checked {
             border-color: @checkbox-checked-border;
             outline: 1px solid @checkbox-checked-border;
+            outline-offset: -1px;
             .cf-icon();
             .cf-icon-approved();
             &:before {
@@ -739,8 +740,8 @@ textarea {
     &_radio {
         box-sizing: border-box;
         position: absolute;
-            top: 1px;
-            left: 1px;
+        top: 1px;
+        left: 1px;
         z-index: 1;
         width: @input-width;
         height: @input-width;
