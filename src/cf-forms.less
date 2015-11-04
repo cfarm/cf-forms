@@ -659,12 +659,11 @@ textarea {
         position: absolute;
         top: 4px;
         left: 4px;
-        z-index: 0;
+        z-index: -1;
         // Use this to try and make the input as small as possible so that it
         // doesn't stick out from underneath .input_checkbox or .input_radio.
            -moz-appearance: none;
         -webkit-appearance: none;
-
     }
 
     &_label {
@@ -712,6 +711,7 @@ textarea {
         &:checked {
             border-color: @checkbox-checked-border;
             outline: 1px solid @checkbox-checked-border;
+            outline-offset: -1px;
             .cf-icon();
             .cf-icon-approved();
             &:before {
@@ -740,8 +740,8 @@ textarea {
     &_radio {
         box-sizing: border-box;
         position: absolute;
-            top: 1px;
-            left: 1px;
+        top: 1px;
+        left: 1px;
         z-index: 1;
         width: @input-width;
         height: @input-width;
@@ -764,10 +764,14 @@ textarea {
         }
         :hover ~ &,
         :focus ~ &,
-        .focus ~ & {
+        .focus ~ &,
+        :checked:hover ~ &, 
+        :checked:focus ~ &,
+        :checked.focus ~ & {
             // box-shadow is being used instead of outline because outline
             // does not respect border-radius.
             outline: none;
+            border-color: @input-bg;
             box-shadow: 0px 0px 0px 2px @input-border-focus;
         }
         [disabled="true"] ~ & {
@@ -987,6 +991,9 @@ textarea {
 
         &.selected .cf-input_label,
         &.focus .cf-input_label,
+        &:focus .cf-input_label,
+        &:hover .cf-input_label,
+        input:focus ~ .cf-input_label,
         input:checked ~ .cf-input_label +  {
             outline: 2px solid @input-border-focus;
         }
